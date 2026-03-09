@@ -2,6 +2,8 @@ import xgboost as xgb
 from sklearn.metrics import classification_report, average_precision_score
 import joblib # To save model
 
+from handle_imbalance import apply_smote
+
 def train_fraud_model(X_train, y_train, X_test, y_test):
     # Initialize XGBoost
     model = xgb.XGBClassifier(
